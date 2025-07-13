@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Calculator</h1>
+        <div class="input-group">
+            <label for="totalClasses">Total Classes</label>
+            <input type="number" id="totalClasses" min="0" placeholder="e.g., 50" aria-label="Total classes held">
+        </div>
+        <div class="input-group">
+            <label for="attendedClasses">Classes Attended</label>
+            <input type="number" id="attendedClasses" min="0" placeholder="e.g., 35" aria-label="Classes attended">
+        </div>
+        <div class="input-group">
+            <label for="targetPercentage">Target %</label>
+            <input type="number" id="targetPercentage" min="0" max="100" placeholder="e.g., 75" aria-label="Target attendance percentage">
+        </div>
+        <button onclick="calculateAttendance()">Calculate</button>
+        <div id="result" class="result-card" style="display: none;"></div>
+        <div id="error" class="error-card" style="display: none;"></div>
+        <div class="progress-ring">
+            <svg class="progress-circle" width="120" height="120">
+                <circle class="progress-circle-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="progress-circle-fill" cx="60" cy="60" r="50" id="progressCircle"></circle>
+            </svg>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+        <button class="share-btn" onclick="shareCalculator()">Share Result</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

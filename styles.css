@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a4b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: clamp(16px, 5vw, 24px);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: clamp(16px, 4vw, 24px);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: clamp(12px, 3vw, 16px);
+}
+
+label {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    font-weight: 600;
+    color: #d1d1ff;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: clamp(10px, 3vw, 12px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6b48ff;
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: clamp(10px, 3vw, 12px);
+    background: linear-gradient(135deg, #6b48ff, #00ddeb);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 72, 255, 0.4);
+}
+
+.result-card, .error-card {
+    margin-top: clamp(12px, 3vw, 16px);
+    padding: clamp(12px, 3vw, 16px);
+    border-radius: 8px;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    text-align: center;
+}
+
+.result-card {
+    background: rgba(0, 255, 163, 0.1);
+    color: #00ffa3;
+}
+
+.error-card {
+    background: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+}
+
+.progress-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: clamp(16px, 4vw, 24px) auto;
+}
+
+.progress-circle {
+    width: clamp(80px, 20vw, 120px);
+    height: clamp(80px, 20vw, 120px);
+    transform: rotate(-90deg);
+}
+
+.progress-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.progress-circle-fill {
+    fill: none;
+    stroke: #6b48ff;
+    stroke-width: 8;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    color: #fff;
+}
+
+.share-btn {
+    background: linear-gradient(135deg, #ff2e63, #ff6b6b);
+    margin-top: clamp(12px, 3vw, 16px);
+}
+
+.ad-container {
+    margin: clamp(12px, 3vw, 16px) 0;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.footer {
+    text-align: center;
+    margin-top: clamp(12px, 3vw, 16px);
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    cursor: pointer;
+    color: #fff;
+}
+
+.light-mode {
+    background: linear-gradient(135deg, #f0f0ff, #d1d1ff);
+    color: #1e1e2f;
+}
+
+.light-mode .container {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.light-mode input {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1e1e2f;
+}
+
+.light-mode .theme-toggle {
+    color: #1e1e2f;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: clamp(12px, 4vw, 16px);
+    }
+    h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+    input, button {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
+    .progress-circle {
+        width: clamp(60px, 18vw, 100px);
+        height: clamp(60px, 18vw, 100px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 500px;
+    }
+    h1 {
+        font-size: clamp(1.8rem, 5vw, 2rem);
+    }
+}
